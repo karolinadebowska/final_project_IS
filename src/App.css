@@ -1,0 +1,57 @@
+.App {
+  text-align: center;
+  background-color: white;
+}
+ul {
+  list-style-type: none;
+}
+.load-animation{
+  height:15vmin;
+}
+* {
+  box-sizing: border-box;
+}
+.parent{
+  display: flex;
+  justify-content: space-between;
+}
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+.smaller{
+  height:8vmin;
+  display: block;
+  width:20vw;
+}
+.insta{
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .smaller {
+    width: 30vmin;
+    position: relative;
+    margin-bottom: 1%;
+    margin-top: 1%;
+  }
+}
+@media screen and (min-width: 900px) {
+  .insta{
+    display:inline-block;
+  }
+}
+.App-header {
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
