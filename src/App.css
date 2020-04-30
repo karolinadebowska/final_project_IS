@@ -2,11 +2,21 @@
   text-align: center;
   background-color: white;
 }
+.logoOnPhone{
+  display: block;
+}
+.logoOnDesktop{
+  display: none;
+}
 ul {
   list-style-type: none;
 }
+a{color:black;}
 .load-animation{
   height:15vmin;
+}
+footer{
+  border-top:1px solid black;
 }
 * {
   box-sizing: border-box;
@@ -20,9 +30,11 @@ ul {
   pointer-events: none;
 }
 .smaller{
-  height:8vmin;
+  height:9vmin;
   display: block;
   width:20vw;
+  margin-bottom: 0.5%;
+  margin-top: 0.5%;
 }
 .insta{
   display: none;
@@ -54,4 +66,22 @@ ul {
 .App-link {
   color: #61dafb;
 }
+@media screen and (min-width: 992px) {
+  .logoOnPhone{
+    display: none;
+  }
+  .logoOnDesktop{
+    display: inline-block;
+  }
+  .center{
+    padding:1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .smaller {
+    height: unset;
+    width: 40vmin;
 
+  }
+}

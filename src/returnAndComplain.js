@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css'
 import PageHeader from './pageHeader'
 import ContactUs from './complaint';
+import Instagram from "./instagram";
 
 class ReturnAndComplain extends React.Component {
     constructor(props) {
@@ -27,12 +28,12 @@ class ReturnAndComplain extends React.Component {
         </div>
 
         return (
-            <div className='container'>
+            <div className='container m-5'>
                 <PageHeader header={this.state.title}/>
+                <br/>
                 <div>{text}</div>
                 <ContactUs/>
             </div>
         );}
 }
-
 export default ReturnAndComplain;
