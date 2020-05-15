@@ -6,12 +6,11 @@ class Footer extends React.Component {
     render() {
         const info =
             <div className="col-md-6 mt-md-0 mt-3">
-                <h4 className="text-uppercase">KaNa.eco</h4>
+                <h4 className="text-uppercase">...</h4>
                 <p>
-                    Jesteśmy małą firmą tworzącą w imię zasad "zero-waste".
-                    Chcemy zaproponować Wam własnoręcznie szyte ekologiczne produkty, które mamy nadzieje wpadną wam w
-                    oko!
-                    Wszystkie produkty szyjemy własnoręcznie z najlepszych materiałów w duchu "zero-waste".
+                    Kana.eco stworzyłyśmy z myślą o naszej planecie, by każdy z nas małymi krokami mógł przenieść się
+                    w świat ekologii. Posiadamy produkty ekologiczne i produkty z recyklingu. Rozgość się u nas!
+                    Życzymy miłych zakupów
                 </p>
             </div>
 
@@ -20,13 +19,13 @@ class Footer extends React.Component {
                 <h5 className="text-uppercase">Kontakt</h5>
                 <ul className="list-unstyled">
                     <li>
-                        <a href="https://www.facebook.com/kana.eco/" target="_blank"
-                           className="btn btn-social-icon btn-facebook" style={{"margin-bottom": '5px'}}>
+                        <a href="https://www.facebook.com/kana.eco/"
+                           className="btn btn-social-icon btn-facebook" style={{"marginBottom": '5px'}}>
                             <span style={{"color": 'white'}} className="fa fa-facebook"></span>
                         </a>
-                        <a href="https://www.instagram.com/kana.eco/" target="_blank"
+                        <a href="https://www.instagram.com/kana.eco/"
                            className="btn btn-social-icon btn-instagram"
-                           style={{"margin-bottom": '5px', "margin-left": '10px'}}>
+                           style={{"marginBottom": '5px', "marginLeft": '10px'}}>
                             <span style={{"color": 'white'}} className="fa fa-instagram"></span>
                         </a>
                     </li>

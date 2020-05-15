@@ -1,36 +1,27 @@
 import React from 'react';
-import Firebase from 'firebase';
 import './App.css';
-import ReactDOM from "react-dom";
 import Nav from './nav';
 import Carousel from './carousel';
 import Footer from './footer';
 import ReturnAndComplain from './returnAndComplain';
 import About from './about';
 import Product from './productPage'
-import AddItem from "./AddItem";
-import ImageUpload from "./ImageUpload";
-import { BrowserRouter, Route } from 'react-router-dom';
+import NotFound from './NotFound'
+import { BrowserRouter, Route,Switch, Redirect} from 'react-router-dom';
 import Main from './Main'
+import Admin from './admin'
+import DetailPage from "./DetailPage";
 
 class App extends React.Component {
     constructor(props) {
         super(props);
-        this.handler = this.handler.bind(this);
         this.state = {
             isSignedIn: false,
             page: 'home',
         }
-            console.log(this.state.page)
     }
     static getDerivedStateFromProps(props, state) {
         return {page: props.page};
-    }
-    handler() {
-        this.setState({
-            page: 'o-nas'
-        });
-        console.log(this.state.page)
     }
     render(){
         return (
@@ -39,10 +30,16 @@ class App extends React.Component {
                     <Nav isSignedIn={this.state.isSignedIn}/>
                     <Carousel/>
                     <div className="contentBox">
+                        <Admin/>
+                        <Switch>
                         <Route path="/" exact component={Main}/>
                         <Route path="/produkty/:id" component={Product}/>
                         <Route path="/o-nas" exact component={About} />
                         <Route path="/zwroty-i-reklamacje" component={ReturnAndComplain} />
+                        <Route path='/produkt/:id' component={DetailPage}/>
+                        <Route path="/404" component={NotFound} />
+                        <Redirect to="/404" />
+                    </Switch>
                     </div>
                     <Footer handler = {this.handler}/>
                 </BrowserRouter>

@@ -1,40 +1,32 @@
 import React from "react";
-import App from './App'
 import {Link } from "react-router-dom";
 class NavFooter extends React.Component {
-    state = {currentPage: '/'}
-
-    onTabClick(event, tabName) {
-        this.setState({ currentPage: tabName })
-    }
-
     render() {
         return (
             <div className="col-md-3 mb-md-0 mb-3">
                 <ul>
                     <li>
-                        <Link to="/o-nas"
-                              onClick={event => this.onTabClick(event, '/o-nas')}>
+                        <Link to="/o-nas" onClick={() => window.scrollTo(0, 0)}>
                             O nas
                         </Link>
                     </li>
                     <li>
-                        <Link to="/jak-kupowac" onClick={event => this.onTabClick(event, '/o-nas')}>
+                        <Link to="/jak-kupowac"  onClick={() => window.scrollTo(0, 0)}>
                             Jak kupowac?
                         </Link>
                     </li>
                     <li>
-                        <Link to="/dostawa" onClick={event => this.onTabClick(event, '/o-nas')}>
+                        <Link to="/dostawa"  onClick={() => window.scrollTo(0, 0)}>
                             Koszt i czas dostawy
                         </Link>
                     </li>
                     <li>
-                        <Link to="/zwroty-i-reklamacje" onClick={event => this.onTabClick(event, '/o-nas')}>
+                        <Link to="/zwroty-i-reklamacje"  onClick={() => window.scrollTo(0, 0)}>
                             Zwroty i Reklamacje
                         </Link>
                     </li>
                     <li>
-                        <Link to="/regulamin" onClick={event => this.onTabClick(event, '/o-nas')}>
+                        <Link to="/regulamin"  onClick={() => window.scrollTo(0, 0)}>
                             Regulamin sklepu
                         </Link>
                     </li>

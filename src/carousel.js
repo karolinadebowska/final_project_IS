@@ -16,22 +16,21 @@ class Carousel extends React.Component{
         window.setInterval(this.updateCount, 3000);
     }
     updateCount () {
-        let count = this.state.count;   // ES6 Decounstructor. Pulls this.state.count, and assigns it to new count variable
+        let count = this.state.count;
         count++;
-        if(count==5)
+        if(count===5)
             count=0
-        this.setState({ count }); // ES6 Object Constructor. If we have a variable named count, this equals out to
-        // { count: count }
+        this.setState({ count });
     }
 
     render() {
         const pics = [slide0, slide1, slide2,slide3,slide4];
-        const { count } = this.state; // ES6 Decounstructor. Pulls this.state.count, and assigns it to new count variable
+        const { count } = this.state;
         return (<div>
-            <section className="carousel">
-                <h1 id="title"> Przeciętny Polak wytwarza rocznie ponad 300 kg śmieci... chyba nie chcesz być
-                    przeciętny? </h1>
-                <img id="slide0" className="active" src={pics[count]}/>
+            <section className="carousel" style={{'textAlign':'center'}}>
+                <h3 id="title"> Przeciętny Polak wytwarza rocznie ponad 300 kg śmieci... chyba nie chcesz być
+                    przeciętny? </h3>
+                <img id="slide0" className="active" src={pics[count]} alt=''/>
 
             </section>
         </div>);

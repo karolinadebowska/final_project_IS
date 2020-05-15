@@ -19,7 +19,6 @@ state = {
             {this.state.redirect
                 ? <App/>
             : <div>
-                    {console.log(logo)}
                     <header className="App-header">
                     <img style={{'display':'block'}} src={logo} className="App-logo" alt="logo" />
                     <img style={{'display':'block'}} src={load} className="load-animation" alt="loading" />

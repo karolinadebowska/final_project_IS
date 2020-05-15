@@ -3,12 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Loading from './loading';
 import * as serviceWorker from './serviceWorker';
-import Firebase, { FirebaseContext } from './Firebase';
 
 ReactDOM.render(
-    <FirebaseContext.Provider value={new Firebase()}>
-        <Loading/>
-    </FirebaseContext.Provider>,
+        <Loading/>,
   document.getElementById('root')
 );
 
