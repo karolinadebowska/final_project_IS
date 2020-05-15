@@ -38,7 +38,7 @@ class DetailPage extends React.Component{
                         <ul>
                             <br/>
                             <li>cena: {this.state.price} zł</li>
-                            {this.state.color!=="" &&
+                            {(this.state.color!=='nie aplikuje') &&
                             <li>kolor: {this.state.color}</li>
                             }
                         </ul>

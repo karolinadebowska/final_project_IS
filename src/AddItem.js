@@ -13,7 +13,7 @@ class AddItem extends Component {
         this.state = {
             currentItem: '',
             description: '',
-            color:'',
+            color:'nie aplikuje',
             price:'',
             type:'hity kana',
             items: [],
@@ -74,8 +74,8 @@ class AddItem extends Component {
         this.setState({
             currentItem: '',
             description: '',
-            color:'',
-            type:'',
+            color:'nie aplikuje',
+            type:'hity kana',
             price:'',
             photos:[],
             dateCreated: '',

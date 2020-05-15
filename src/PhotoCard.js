@@ -12,6 +12,7 @@ class PhotoCard extends React.Component{
                     <img className="card-img-top"
                          src = {this.props.photoSrc}
                          data-holder-rendered="true"
+                         style={{'objectFit': 'cover'}}
                     alt='Zdjęcie produktu'/>
                     <div className="card-body" style={{'textAlign':'center'}}>
                         <h2 className="card-text">{this.props.name}</h2>
