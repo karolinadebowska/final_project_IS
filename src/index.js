@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import Loading from './loading';
-import * as serviceWorker from './serviceWorker';
+import './components/index.css';
+import Loading from './components/loading';
+import * as serviceWorker from './components/serviceWorker';
 
 ReactDOM.render(
         <Loading/>,

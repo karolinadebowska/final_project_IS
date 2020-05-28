@@ -24,12 +24,14 @@ class ListItem extends Component {
                     color:items[item].color,
                     type:items[item].type,
                     price:items[item].price,
-                    photos:items[item].photos
+                    photo:items[item].photo,
+                    dateCreated:items[item].dateCreated
                 });
             }
             this.setState({
                 items: newState,
             });
+            console.log(this.state.items)
         });
     }
     handleChangeButton(e) {

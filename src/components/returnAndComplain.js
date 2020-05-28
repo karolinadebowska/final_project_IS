@@ -14,7 +14,7 @@ class ReturnAndComplain extends React.Component {
     render(){
         return (
             <div className='parent'>
-                <div className='container'>
+                <div className='container m-5'>
                     <PageHeader header={this.state.title}/>
                     <br/>
                     <div>{text_return_and_complain}</div>

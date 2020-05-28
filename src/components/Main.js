@@ -5,6 +5,7 @@ import {storage} from './Firebase/firebase'
 import SideBar from './SideBar'
 import {categories,link_categories} from './consts'
 let listItems
+
 class Main extends React.Component{
     constructor() {
         super();
@@ -13,13 +14,25 @@ class Main extends React.Component{
             opaski: '',
             dom:'',
             akcesoria:'',
-            frotki:''
+            frotki:'',
+            palakaty:'',
+            swiece:'',
+            kosmetyki:'',
+            inne:'',
+            promocje:'',
+            wszystko:''
         }
         this.getImage('torby')
         this.getImage('opaski')
         this.getImage('dom')
         this.getImage('akcesoria')
         this.getImage('frotki')
+        this.getImage('plakaty')
+        this.getImage('swiece')
+        this.getImage('kosmetyki')
+        this.getImage('inne')
+        this.getImage('promocje')
+        this.getImage('wszystko')
     }
     getImage (image) {
         let { state } = this
@@ -27,21 +40,24 @@ class Main extends React.Component{
             state[image] = url
             this.setState(state)
         }).catch((error) => {
-            // Handle any errors
+            state[image] = ''
+            this.setState(
+                state)
         })
     }
     render(){
         const category_to_image= {
-            'Hity KaNa':'',
+            'Promocje':this.state.promocje,
             'Torby bawełniane': this.state.torby,
             'Akcesoria zero waste':this.state.akcesoria,
             'Dom zero waste':this.state.dom,
-            'Woreczki':'',
+            'Kosmetyki':this.state.kosmetyki,
             'Frotki':this.state.frotki,
             'Opaski':this.state.opaski,
-            'Świece sojowe':'',
-            'Plakaty':'',
-            'Wszystkie produkty':''};
+            'Świece sojowe': this.state.swiece,
+            'Plakaty':this.state.plakaty,
+            'Inne':this.state.inne,
+            'Wszystkie produkty':this.state.wszystko};
         return(
             <div className='parent'>
                 <div className='container m-5'>

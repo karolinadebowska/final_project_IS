@@ -3,6 +3,7 @@ import './App.css'
 import PageHeader from "./pageHeader";
 import SideBar from './SideBar'
 import {text_about_page} from './consts'
+import {Element} from "react-scroll";
 
 class About extends React.Component{
     constructor(props) {

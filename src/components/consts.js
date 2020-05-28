@@ -2,26 +2,28 @@ import React from "react";
 import {Link} from "react-router-dom";
 import logo from "./logo.svg";
 
-export const categories= ['Hity KaNa', 'Torby bawełniane', 'Akcesoria zero waste','Dom zero waste', 'Woreczki',
-    'Frotki','Opaski','Świece sojowe','Plakaty','Wszystkie produkty'];
-export const title_types = ['nowości','hity','torby','akcesoria-zero-waste','dom-zero-waste','woreczki','frotki',
-    'opaski','świece-sojowe','plakaty','nasze-produkty']
-export const link_categories = ['/produkty/hity', '/produkty/torby', '/produkty/akcesoria-zero-waste','/produkty/dom-zero-waste',
-    '/produkty/woreczki', '/produkty/frotki','/produkty/opaski','/produkty/świece-sojowe','/produkty/plakaty',
+export const categories= ['Promocje', 'Torby bawełniane', 'Akcesoria zero waste','Dom zero waste', 'Kosmetyki',
+    'Frotki','Opaski','Świece sojowe','Plakaty','Inne','Wszystkie produkty'];
+export const title_types = ['promocje','torby','akcesoria-zero-waste','dom-zero-waste','kosmetyki','frotki',
+    'opaski','świece-sojowe','plakaty','inne','nasze-produkty']
+export const link_categories = ['/produkty/promocje', '/produkty/torby', '/produkty/akcesoria-zero-waste','/produkty/dom-zero-waste',
+    '/produkty/kosmetyki', '/produkty/frotki','/produkty/opaski','/produkty/świece-sojowe','/produkty/plakaty','/produkty/inne',
     '/produkty/nasze-produkty']
 
 export const colors = ['nie aplikuje', 'żółty', 'złoty', 'zielony', 'wielobarwny', 'turkusowy', 'szary', 'srebrny',
     'różowy', 'pomarańczowy', 'niebieski', 'fioletowy', 'czerwony', 'czarny', 'brązowy', 'biały', 'beżowy']
+//dictionary to change adres in link after /
 export const dict_types = {
-    'hity kana': "hity",
+    'promocje': "promocje",
     'torby bawełniane':'torby',
     'akcesoria zero waste':'akcesoria-zero-waste',
     'dom zero waste':'dom-zero-waste',
-    'woreczki':'woreczki',
+    'kosmetyki':'kosmetyki',
     'frotki':'frotki',
     'opaski':'opaski',
     'świece sojowe':'świece-sojowe',
     'plakaty':'plakaty',
+    'inne':'inne',
     'wszystkie produkty':'nasze-produkty'
 };
 export const text_about_page =
@@ -84,19 +86,21 @@ export const aces_zw_descr = <p className="lead text-muted">Znajdziesz tu wiele 
 export const torby_descr = <p className="lead text-muted">Zawarty w nich minimalizm urzeknie każdego z Was, dzięki niemu będzie pasowała do każdej stylizacji. Posiadamy wyjątkowe torby, z własnoręcznie wykonanymi haftami jak również torby stemplowane. Torby bawełniane świetnie zastępują  nie tylko zakupowe, plastikowe torby, ale również świetnie sprawdzą się jako torba do codziennego użytku. Dodatkowym atutem  jest możliwość personalizacji toreb.</p>
 export const kosmet_descr = <p className="lead text-muted">Każdą świece tworzymy ręcznie w małej pracowni, z dbałością o wszystkie szczegóły. Nasze świece składają się jedynie z ekologicznego, certyfikowanego wosku sojowego oraz naturalnych olejków eterycznych. Wosk sojowy topi się dłużej, dlatego świece sojowe posiadają do dwóch razy dłuższy czas palenia w porównaniu ze świecami parafinowymi. Naturalne właściwości wosku sojowego sprawiają, że nie zawiera on żadnych toksyn i nie uwalnia do otoczenia podczas spalania żadnych rakotwórczych substancji. </p>
 export const świece_descr = <p className="lead text-muted">Każdą świece tworzymy ręcznie w małej pracowni, z dbałością o wszystkie szczegóły. Nasze świece składają się jedynie z ekologicznego, certyfikowanego wosku sojowego oraz naturalnych olejków eterycznych. Wosk sojowy topi się dłużej, dlatego świece sojowe posiadają do dwóch razy dłuższy czas palenia w porównaniu ze świecami parafinowymi. Naturalne właściwości wosku sojowego sprawiają, że nie zawiera on żadnych toksyn i nie uwalnia do otoczenia podczas spalania żadnych rakotwórczych substancji. </p>
-
+export const plakat_descr = <p className="lead text-muted">Tworzone przez nas minimalistyczne plakaty ozdobią Twoją przestrzeń, nadadzą jej niepowtarzalnego charakteru.</p>
+//description under slogan for each category
 export const dic_find_descr_category = {
-    'nowości':'',
-    'hity':'',
+    'promocje': '',
     'torby':torby_descr,
     'akcesoria-zero-waste':aces_zw_descr ,
     'dom-zero-waste':dom_zw_descr,
-    'woreczki':'',
+    'kosmetyki':kosmet_descr,
     'frotki':frotki_descr,
     'opaski':opaski_descr,
     'świece-sojowe':świece_descr,
-    'plakaty':'',
-    'nasze-produkty':''
+    'plakaty':plakat_descr,
+    'nasze-produkty':'',
+    'inne':'',
+    'wszystkie produkty':''
 }
 
 export const logoDisplay =
@@ -104,12 +108,8 @@ export const logoDisplay =
         <img src={logo} className="App-logo smaller"
              alt="logo"/>
     </Link>
-const googleButton =
-    <button type="button" className="btn btn-lg btn-so">
-        <a href='#' style={{'color': 'white'}} className="btn btn-block btn-social btn-google">
-            <span className="fa fa-google"></span> Zaloguj z Google
-        </a>
-    </button>
+export const googleButton =
+    <button><div className="g-signin2" data-onsuccess="onSignIn">Zaloguj </div></button>
 
 export const text_return_and_complain = <div>
     <p>W celu dokonania zwrotu towaru prosimy o wysłanie zakupionych produktów wraz z wydrukowanym i wypełnionym <a href="/documents/FORLUMARZ-ZWROTU.docx" download>

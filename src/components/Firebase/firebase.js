@@ -7,9 +7,14 @@ const config = {
     projectId: process.env.REACT_APP_PROJECT_ID,
     storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
     messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID
-
 };
 firebase.initializeApp(config);
 export const auth = firebase.auth;
 export const db = firebase.database();
 export const storage = firebase.storage();
+export const googleProvider = new firebase.auth.GoogleAuthProvider();
+
+export const doSignInWithGoogle = () =>
+    this.auth.signInWithPopup(googleProvider);
+
+export const doSignOut = () => this.auth.signOut();

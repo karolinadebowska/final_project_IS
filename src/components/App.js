@@ -11,6 +11,7 @@ import { BrowserRouter, Route,Switch, Redirect} from 'react-router-dom';
 import Main from './Main'
 import Admin from './admin'
 import DetailPage from "./DetailPage";
+import ThankYouForm from "./ThankYouForm";
 
 class App extends React.Component {
     constructor(props) {

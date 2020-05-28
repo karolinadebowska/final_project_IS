@@ -41,7 +41,7 @@ class AddItem extends Component {
                     type:items[item].type,
                     price:items[item].price,
                     dateCreated:items[item].dateCreated,
-                    photo:items[item].photo
+                    photo:items[item].photo,
                 });
             }
             this.setState({
@@ -50,7 +50,7 @@ class AddItem extends Component {
         });
     }
     uploadPicture(id){
-        this.child.current.handleUpload(id);
+        this.child.current.handleUpload('images',id);
     }
     handleSubmit(e) {
         e.preventDefault();
@@ -68,19 +68,11 @@ class AddItem extends Component {
             type:this.state.type,
             price:this.state.price,
             dateCreated: dateTime,
-            photo:this.state.photo
+            photo:this.state.photo,
         }
+        console.log('photo',this.state.photo)
+        console.log('date', item.dateCreated)
         itemsRef.push(item);
-        this.setState({
-            currentItem: '',
-            description: '',
-            color:'nie aplikuje',
-            type:'hity kana',
-            price:'',
-            photos:[],
-            dateCreated: '',
-            photo:''
-        });
         let self = this;
         itemsRef.limitToLast(1).once('value')
             .then(function(snapshot) {
@@ -92,6 +84,16 @@ class AddItem extends Component {
             .catch(function(error) {
                 console.log(error);
             });
+        this.setState({
+            currentItem: '',
+            description: '',
+            color:'nie aplikuje',
+            type:'hity kana',
+            price:'',
+            photos:[],
+            dateCreated: '',
+            photo:'',
+        });
     }
     handleChange(e) {
         e.target.value===null ?
@@ -155,7 +157,7 @@ class AddItem extends Component {
                                 </div>
                             </div>
                             <div className="form-row">
-                                <ImageUpload ref={this.child} required name="photo1" onChange={this.handleChange}/>
+                                <ImageUpload ref={this.child} required name="photo" onChange={this.handleChange}/>
                                 <button>Add Item</button>
                             </div>
                         </Form>

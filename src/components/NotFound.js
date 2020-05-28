@@ -7,7 +7,7 @@ const NotFound = () =>
         <p>Strona, której szukasz, nie istnieje.</p>
         <br/>
         <p style={{textAlign:"center"}}>
-            <Link to="/">Go to Home </Link>
+            <Link to="/" onClick={() => window.scrollTo(0, 0)}>Strona główna </Link>
         </p>
     </div>
 

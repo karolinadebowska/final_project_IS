@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import {Link} from "react-router-dom";
 import {categories,link_categories,logoDisplay} from './consts'
+import Google from './googleButton'
 
 let listItems;
 
@@ -40,3 +41,5 @@ class Nav extends React.Component {
 }
 
 export default Nav;
+/*
+*         <div className='logoOnPhone'><Google/></div>*/
