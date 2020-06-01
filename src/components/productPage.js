@@ -4,6 +4,7 @@ import './productPage.css'
 import { db }  from './Firebase/firebase'
 import {title_types} from "./consts";
 import DisplayProducts from "./DisplayProducts";
+import PromoPage from "./Promo/PromoPage";
 import {Element, Events, scroller } from 'react-scroll'
 let filteredResults
 class Product extends React.Component{
@@ -132,7 +133,11 @@ class Product extends React.Component{
                 <div className="album py-5 bg-light">
                     <div className="container">
                         <div className="row">
-                            <DisplayProducts items={this.state.items} titlePage = {link_valid && titlePage}/>
+                            {titlePage === 'promocje' ?
+                                <PromoPage items={this.state.items}/>
+                                :
+                                <DisplayProducts items={this.state.items} titlePage={link_valid && titlePage}/>
+                            }
                         </div>
                     </div>
                 </div>

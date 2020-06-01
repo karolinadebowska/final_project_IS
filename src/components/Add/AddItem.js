@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import './App.css';
-import { db }  from './Firebase/firebase'
+import '../App.css';
+import { db }  from '../Firebase/firebase'
 import {Form, Input } from 'reactstrap'
-import ImageUpload from "./ImageUpload";
-import {categories,colors} from './consts'
+import ImageUpload from "../ImageUpload";
+import {categories,colors} from '../consts'
 import './addItem.css'
-
 let listTypes,listColors;
+
 class AddItem extends Component {
     constructor() {
         super();
@@ -54,13 +54,13 @@ class AddItem extends Component {
     }
     handleSubmit(e) {
         e.preventDefault();
-        const itemsRef = db.ref('items');
-
+        //get a date
         let today = new Date();
         let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
         let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
         let dateTime = date+' '+time;
 
+        const itemsRef = db.ref('items');
         const item = {
             name: this.state.currentItem,
             description: this.state.description,
@@ -70,8 +70,6 @@ class AddItem extends Component {
             dateCreated: dateTime,
             photo:this.state.photo,
         }
-        console.log('photo',this.state.photo)
-        console.log('date', item.dateCreated)
         itemsRef.push(item);
         let self = this;
         itemsRef.limitToLast(1).once('value')
@@ -153,6 +151,9 @@ class AddItem extends Component {
                                             <option key={i} value={category.toLowerCase()}>
                                                     {category.toLowerCase()}
                                             </option>)}
+                                        <option value={'zestawy'}>
+                                            {'zestawy'}
+                                        </option>
                                     </select>
                                 </div>
                             </div>

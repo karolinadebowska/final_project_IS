@@ -1,6 +1,7 @@
 import React from "react";
 import AddItem from "./AddItem";
 import ListItem from './ListItem';
+import AddPromo from "./AddPromo";
 
 class Admin extends React.Component {
     constructor() {
@@ -30,6 +31,7 @@ class Admin extends React.Component {
                 <div className='admin-options'>
                     <AddItem/>
                     <ListItem/>
+                    <AddPromo/>
                 </div>
             }
             </div>

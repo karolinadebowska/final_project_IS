@@ -14,18 +14,9 @@ class DisplayProducts extends React.Component{
                         //photo card for nasze produkty page
                         <div className="col-md-4" key={item.id}>
                             <Link to={{
-                                pathname: `/produkt/${item.id}`,
-                                state: {
-                                    id: item.id,
-                                    name: item.title,
-                                    description: item.description,
-                                    price: item.price,
-                                    type: item.type,
-                                    color: item.color,
-                                    photo: item.photo
-                                }
+                                pathname: `/produkt/${item.id}`
                             }}><span className="sr-only">(current)</span>
-                            <PhotoCard photoSrc={item.photo} name = {item.title} description = {item.description}
+                                <PhotoCard photoSrc={item.photo} name = {item.title} description = {item.description}
                                        displayPrice={true} id={item.id} dateCreated={item.dateCreated}
                                        price = {item.price} type = {item.type} color = {item.color} idShort={item.id.slice(-6)}/>
                             </Link>
@@ -35,16 +26,7 @@ class DisplayProducts extends React.Component{
                         dict_types[type]===this.props.titlePage &&
                         <div className="col-md-4"key={item.id}>
                             <Link to={{
-                                pathname: `/produkt/${item.id}`,
-                                state: {
-                                    id: item.id,
-                                    name: item.title,
-                                    description: item.description,
-                                    price: item.price,
-                                    type: item.type,
-                                    color: item.color,
-                                    photo: item.photo
-                                }
+                                pathname: `/produkt/${item.id}`
                             }}><span className="sr-only">(current)</span>
                             <PhotoCard photoSrc={item.photo} name = {item.title} displayPrice={true} idShort={item.id.slice(-6)} id={item.id}
                                        description = {item.description} dateCreated={item.dateCreated} photos = {item.photos}

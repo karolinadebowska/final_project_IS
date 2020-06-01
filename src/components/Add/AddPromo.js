@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import { db }  from './Firebase/firebase'
-import TableShowData from './tableShowData'
-class ListItem extends Component {
+import {db}  from '../Firebase/firebase'
+import DiscountCategoryAdd from "./DiscountCategoryAdd";
+import DiscountProductAdd from "./DiscountProductAdd";
+import SeveralItemsCheaper from "./SeveralItemsCheaper";
+class AddPromo extends Component {
     constructor() {
         super();
         this.state = {
-            show:false,
             items:[]
         }
-        this.handleChangeButton=this.handleChangeButton.bind(this)
-        this.deleteRow=this.deleteRow.bind(this)
     }
     componentDidMount() {
         const itemsRef = db.ref('items');
@@ -34,30 +33,17 @@ class ListItem extends Component {
             console.log(this.state.items)
         });
     }
-    handleChangeButton(e) {
-        this.setState({
-            show: !this.state.show
-        });
-    }
-    deleteRow(id){
-        return db.ref('items').child(id).remove();
-    }
+
     render() {
-        const ListItemButton =
-            <button type="button" onClick={this.handleChangeButton} className="btn btn-so">
-                <a style={{'color': 'black','backgroundColor':' white'}} className="btn btn-block btn-social btn-google">
-                    Wszystkie produkty
-                </a>
-            </button>
+
         return (
             <div className='container'>
-                {ListItemButton}
-                <br/>
-                {this.state.show===true &&
-                    <TableShowData items={this.state.items}/>
-                }
+                <h3>Dodaj promocje</h3>
+               <SeveralItemsCheaper items={this.state.items}/>
+               <DiscountCategoryAdd/>
+               <DiscountProductAdd/>
             </div>
         );
     }
 }
-export default ListItem;
+export default AddPromo;

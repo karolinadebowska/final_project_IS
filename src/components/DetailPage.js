@@ -1,7 +1,7 @@
 import React from 'react'
-import {db} from './Firebase/firebase'
 import DetailPageDisplay from "./DetailPageDisplay";
 import {Element, Events, scroller} from "react-scroll";
+import {db} from "./Firebase/firebase";
 
 class DetailPage extends React.Component{
     constructor() {
@@ -11,16 +11,12 @@ class DetailPage extends React.Component{
         }
         this.scrollTo=this.scrollTo.bind(this)
     }
-    componentWillUnmount() {
-        Events.scrollEvent.remove('begin');
-        Events.scrollEvent.remove('end');
-    }
     componentDidMount () {
         Events.scrollEvent.register('begin', function () {
         });
         Events.scrollEvent.register('end', function () {
         });
-        console.log(this.props.match.params.id)
+        console.log(this.props.match.params.id);
         const itemsRef = db.ref('items');
         itemsRef.on('value', (snapshot) => {
             let items = snapshot.val();
@@ -39,10 +35,14 @@ class DetailPage extends React.Component{
                     });
                 }
             }
-            this.setState({
-                items: newState,
-            });
-        });
+                this.setState({
+                    items:newState
+                });
+        })
+    }
+    componentWillUnmount() {
+        Events.scrollEvent.remove('begin');
+        Events.scrollEvent.remove('end');
     }
     scrollTo() {
         scroller.scrollTo('scroll-to-element', {

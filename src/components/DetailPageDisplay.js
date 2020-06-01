@@ -1,8 +1,5 @@
 import React from 'react'
 class DetailPageDisplay extends React.Component{
-    constructor() {
-        super();
-    }
     render(){
         return (
             <div className="container m-5">

@@ -5,10 +5,10 @@ import logo from "./logo.svg";
 export const categories= ['Promocje', 'Torby bawełniane', 'Akcesoria zero waste','Dom zero waste', 'Kosmetyki',
     'Frotki','Opaski','Świece sojowe','Plakaty','Inne','Wszystkie produkty'];
 export const title_types = ['promocje','torby','akcesoria-zero-waste','dom-zero-waste','kosmetyki','frotki',
-    'opaski','świece-sojowe','plakaty','inne','nasze-produkty']
+    'opaski','świece-sojowe','plakaty','inne','nasze-produkty','zestawy']
 export const link_categories = ['/produkty/promocje', '/produkty/torby', '/produkty/akcesoria-zero-waste','/produkty/dom-zero-waste',
     '/produkty/kosmetyki', '/produkty/frotki','/produkty/opaski','/produkty/świece-sojowe','/produkty/plakaty','/produkty/inne',
-    '/produkty/nasze-produkty']
+    '/produkty/nasze-produkty','produkty/zestawy']
 
 export const colors = ['nie aplikuje', 'żółty', 'złoty', 'zielony', 'wielobarwny', 'turkusowy', 'szary', 'srebrny',
     'różowy', 'pomarańczowy', 'niebieski', 'fioletowy', 'czerwony', 'czarny', 'brązowy', 'biały', 'beżowy']
@@ -24,7 +24,8 @@ export const dict_types = {
     'świece sojowe':'świece-sojowe',
     'plakaty':'plakaty',
     'inne':'inne',
-    'wszystkie produkty':'nasze-produkty'
+    'wszystkie produkty':'nasze-produkty',
+    'zestawy':'zestawy'
 };
 export const text_about_page =
     <div>
@@ -111,17 +112,23 @@ export const logoDisplay =
 export const googleButton =
     <button><div className="g-signin2" data-onsuccess="onSignIn">Zaloguj </div></button>
 
-export const text_return_and_complain = <div>
-    <p>W celu dokonania zwrotu towaru prosimy o wysłanie zakupionych produktów wraz z wydrukowanym i wypełnionym <a href="/documents/FORLUMARZ-ZWROTU.docx" download>
-        formularzem</a> zwrotu na adres:</p>
-    <ul>
-        <li>Natalia Dębowska</li>
-        <li>ul. Wczasowa 8</li>
-        <li>95-001 Cyprianów</li>
-    </ul>
-    <p>Przyjmujemy zwroty tylko nieużywanych i nie odpakowanych wcześniej produktów. Po otrzymaniu przesyłki i sprawdzeniu czy przedmioty nie zostały otwarte ani użyte przyjmiemy zwrot i zwrócimy Ci pieniądze. </p>
-    <br/>
-    <p>Nie przyjmujemy przesyłek wysłanych za pobraniem.
-        Koszt wysyłki zwrotu oraz reklamacji pokrywa kupujący.</p>
-    <p>W przypadku reklamacji prosimy o wypelnienie formularza ponizej</p>
-</div>
+export const text_return_and_complain =
+    <div>
+        <p>W celu dokonania zwrotu towaru prosimy o wysłanie zakupionych produktów wraz z wydrukowanym i wypełnionym <a href="/documents/FORLUMARZ-ZWROTU.docx" download>
+            formularzem</a> zwrotu na adres:</p>
+        <ul>
+            <li>Natalia Dębowska</li>
+            <li>ul. Wczasowa 8</li>
+            <li>95-001 Cyprianów</li>
+        </ul>
+        <p>Przyjmujemy zwroty tylko nieużywanych i nie odpakowanych wcześniej produktów. Po otrzymaniu przesyłki i sprawdzeniu czy przedmioty nie zostały otwarte ani użyte przyjmiemy zwrot i zwrócimy Ci pieniądze. </p>
+        <br/>
+        <p>Nie przyjmujemy przesyłek wysłanych za pobraniem.
+            Koszt wysyłki zwrotu oraz reklamacji pokrywa kupujący.</p>
+        <p>W przypadku reklamacji prosimy o wypelnienie formularza ponizej</p>
+    </div>
+
+//colors
+export const orange= '#ddab78'
+export const green = '#848d67'
+export const pink = '#f4d9d5'

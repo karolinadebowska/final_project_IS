@@ -9,7 +9,7 @@ import Product from './productPage'
 import NotFound from './NotFound'
 import { BrowserRouter, Route,Switch, Redirect} from 'react-router-dom';
 import Main from './Main'
-import Admin from './admin'
+import Admin from './Add/admin'
 import DetailPage from "./DetailPage";
 import ThankYouForm from "./ThankYouForm";
 

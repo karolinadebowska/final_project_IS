@@ -1,5 +1,5 @@
 import React from "react";
-import {storage,db} from "./Firebase/firebase";
+import {storage,db} from "../Firebase/firebase";
 
 class TableShowData extends React.Component{
     deleteRow(id){
